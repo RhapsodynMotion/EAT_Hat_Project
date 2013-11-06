@@ -23,4 +23,11 @@ public class Member {
    public int getMultiplier() {
       return mMultiplier;
    }
+   
+   public String toString() {
+      String memberInfo = "Member's name is: " + mName 
+                           + "\n His/her multiplier is: " + mMultiplier;
+      
+      return memberInfo;
+   }
 }
