@@ -25,8 +25,8 @@ public class Member {
    }
    
    public String toString() {
-      String memberInfo = "Member's name is: " + mName 
-                           + "\n His/her multiplier is: " + mMultiplier;
+      String memberInfo = "Member's name is: " + mName + "\n" 
+                           + "His/her multiplier is: " + mMultiplier;
       
       return memberInfo;
    }
