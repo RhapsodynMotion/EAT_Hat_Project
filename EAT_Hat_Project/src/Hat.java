@@ -42,8 +42,8 @@ public class Hat {
    // Shuffles the hat a million times
    public void shuffle() {
       for (int i = 0; i < 1000000; i++) {
-         int x = random.nextInt(hat.length),
-          y = random.nextInt(hat.length);
+         int x = random.nextInt(mCount),
+          y = random.nextInt(mCount);
          Member swapHolder;
          if (x != y) {
             swapHolder = hat[x];
@@ -56,20 +56,24 @@ public class Hat {
    // Shows all the names/objects in the hat
    public void showHat() {
       int choice;
+      String flushBuffer;
       boolean valid = true;
       while (valid) {
-         System.out.println("Do you want to see 1) names only or 2) with multiplier?");
+         System.out.println("Do you want to see 1) names only or 2) with multiplier? or 3) exit");
          choice = keyboard.nextInt();
+         flushBuffer = keyboard.nextLine();
          if (choice == 1) {
-            for (int i = 0; i < hat.length; i++) {
+            // major error: use mCount instead of hat.lenth because hat.length represents the size of the array and not all the memembers actualy in the array 
+            for (int i = 0; i < mCount; i++) {
                System.out.println("Slot " + i + ": " + hat[i].getName());
             }
-            valid = false;
          }
          else if (choice == 2) {
-            for (int i = 0; i < hat.length; i++) {
+            for (int i = 0; i < mCount; i++) {
                System.out.println("Slot " + i + ": " + hat[i]);
             }
+         }
+         else {
             valid = false;
          }
       }
