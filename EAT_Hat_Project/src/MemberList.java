@@ -25,6 +25,10 @@ public class MemberList {
          return mCount;
       }
    }
+   
+   public Member getMember(int index) {
+      return memberList[index];
+   }
 
    public void add(Member memberAdded) {
       resizeIfNecessary();
