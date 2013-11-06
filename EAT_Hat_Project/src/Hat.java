@@ -32,9 +32,11 @@ public class Hat {
    }
    
    public Member pullRandomName() {
-      int randomPlace = random.nextInt(mCount);
-      Member randomMember = hat[randomPlace];
-      System.out.println("Place in the hat: " + randomPlace);
+     // int randomPlace = random.nextInt(mCount);
+     // Member randomMember = hat[randomPlace];
+     // System.out.println("Place in the hat: " + randomPlace);
+      
+      Member randomMember = hat[random.nextInt(mCount)];
       return randomMember;
    }
    
