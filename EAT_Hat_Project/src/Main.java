@@ -18,14 +18,18 @@ public class Main {
       String fileName;
       int memberCount = 0;
 
+      MemberList memberList = new MemberList();
+      
       System.out.println("What is the member list file name?");
       fileName = keyboard.nextLine();
-      // Method to add member names/multiplier to a member list
+      
+      
+      // Method to add member (names/multiplier) to a member list
       try {
          MemberLoader memberLoader = new MemberLoader(fileName);
          Member newMember = memberLoader.readNextMember();
          while (newMember != null) {
-            MemberList.add(newMember);
+            memberList.add(newMember);
             memberCount++;
             newMember = memberLoader.readNextMember();
          }
