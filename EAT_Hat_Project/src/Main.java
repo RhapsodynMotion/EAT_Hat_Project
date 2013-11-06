@@ -47,13 +47,14 @@ public class Main {
       }
 
       Hat hat = new Hat(memberList);
-      
+
       boolean testHat = true;
       while (testHat) {
          System.out.println("1) Get total names in the hat \n"
           + "2) Show what's in the hat \n"
           + "3) Shuffle the hat \n"
-          + "4) Exit");
+          + "4) Pull random person from hat \n"
+          + "5) Exit");
          int choice = keyboard.nextInt();
          String flushBuffer = keyboard.nextLine();
          switch (choice) {
@@ -68,8 +69,12 @@ public class Main {
                System.out.println("The hat has been shuffled!");
                break;
             case 4:
+               System.out.println("You picked: " + hat.pullRandomName().getName());
+               break;
+            case 5:
                testHat = false;
                break;
+
             default:
                System.out.println("You've enter default state");
          }
