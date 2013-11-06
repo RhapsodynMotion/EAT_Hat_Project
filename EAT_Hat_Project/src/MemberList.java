@@ -17,6 +17,15 @@ public class MemberList {
       memberList = new Member[DEFAULT_SIZE];
    }
 
+   public int getTotalMembers() {
+      if (mCount <= 0) {
+         return 0;
+      }
+      else {
+         return mCount;
+      }
+   }
+
    public void add(Member memberAdded) {
       resizeIfNecessary();
       memberList[mCount++] = memberAdded;
@@ -24,7 +33,7 @@ public class MemberList {
 
    public void remove(String name) {
       for (int i = 0; i < mCount; i++) {
-         if (memberList[i].getName() == name) {
+         if (memberList[i].getName().equalsIgnoreCase(name)) {
             shiftLeft(i);
             mCount--;
          }
