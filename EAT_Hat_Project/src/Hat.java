@@ -30,6 +30,14 @@ public class Hat {
          }
       }
    }
+   
+   public Member pullRandomName() {
+      int randomPlace = random.nextInt(mCount);
+      Member randomMember = hat[randomPlace];
+      System.out.println("Place in the hat: " + randomPlace);
+      return randomMember;
+   }
+   
    // Get the number of names in the hat
    public int getTotalNames() {
       if (mCount <= 0) {
